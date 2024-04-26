@@ -1,0 +1,13 @@
+.body {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+.body-inner {
+    background-color: #ffffff;
+    max-width: 1023px;
+    width: 100%; 
+    margin: -140px 0 0; 
+}
