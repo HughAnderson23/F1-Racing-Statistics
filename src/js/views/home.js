@@ -4,7 +4,7 @@ import "../../styles/home.css";
 import { Context } from "../store/appContext";
 // import QualiResults from "/src/js/component/QualiResults.js";
 // import RaceResults from "/src/js/component/RaceResults.js";
-import Banner from "/src/js/component/banner.js";
+
 import Body from "/src/js/component/body.js";
 import RaceSelector from "/src/js/component/raceselector.js";
 
@@ -23,8 +23,8 @@ export const Home = () => {
 
   return (
     <div className="text-center home-container">
-      <div>Tabs Holder</div><RaceSelector />
-      <Banner />
+      <RaceSelector />
+      
       <Body />
       {/* Qualifier results component*/}
       {/* <QualiResults results={store.qualifyingResults} /> */}

@@ -8,9 +8,10 @@ import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
+import Banner from "/src/js/component/banner.js";
 import { Footer } from "./component/footer";
 
-//create your first component
+
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
@@ -21,6 +22,8 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
+					<div>Tabs Holder</div>
+					<Banner />
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/demo" element={<Demo />} />
