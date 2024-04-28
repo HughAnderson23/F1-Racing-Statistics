@@ -6,7 +6,7 @@ import QualiResults from "/src/js/component/qualiresults.js";
 // import RaceResults from "/src/js/component/RaceResults.js";
 // import Banner from "../component/banner";
 // import Body from "/src/js/component/body.js";
-import RaceSelector from "/src/js/component/raceselector.js";
+import QualiSelector from "/src/js/component/qualiselector.js";
 
 export const Qualies = () => {
   const { store, actions } = useContext(Context);
@@ -26,8 +26,8 @@ export const Qualies = () => {
       <div className = "body">
             <div className = "body-inner">
               <h1>Qualifying Results</h1>
-              <RaceSelector /> 
-              <div className="center-content">
+              <QualiSelector /> 
+              <div className="center-content">  
                 <QualiResults results={store.qualifyingResults} />
               </div>
             </div>

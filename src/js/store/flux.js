@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
             drivers: [],
             circuits: [],
             qualifyingResults: [],
-            raceResults: [] // Add raceResults array to store race results
+            raceResults: [], // Add raceResults array to store race results
+            
         },
         actions: {
             fetchDrivers: async (year) => {

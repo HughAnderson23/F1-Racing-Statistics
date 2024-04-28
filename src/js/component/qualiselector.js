@@ -1,14 +1,12 @@
-// RaceSelector.js
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 
-const RaceSelector = () => {
+const QualiSelector = () => {
   const { store, actions } = useContext(Context);
 
   const handleRaceChange = (e) => {
     const selectedRound = e.target.value;
     actions.fetchQualifyingResults(2024, selectedRound);
-    actions.fetchRaceResults(2024, selectedRound);
   };
 
   return (
@@ -29,4 +27,4 @@ const RaceSelector = () => {
   );
 };
 
-export default RaceSelector;
+export default QualiSelector;

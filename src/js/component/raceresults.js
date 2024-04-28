@@ -3,7 +3,6 @@ import React from 'react';
 const RaceResults = ({ raceResults }) => {
   return (
     <div>
-      <h3>Race Results</h3>
       <table>
         <thead>
           <tr>

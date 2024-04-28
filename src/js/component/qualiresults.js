@@ -3,7 +3,6 @@ import React from "react";
 const QualiResults = ({ results }) => {
   return (
     <div>
-      
       <table>
         <thead>
           <tr>
