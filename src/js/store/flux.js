@@ -65,7 +65,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     const data = await resp.json();
                     const qualifyingResults = data.MRData.RaceTable.Races[0].QualifyingResults;
                     setStore({ qualifyingResults });
-                    actions.setSelectedRound(round); 
+                    // actions.setSelectedRound(round); 
                 } catch (error) {
                     console.error('Error fetching qualifying results:', error);
                 }

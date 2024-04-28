@@ -7,7 +7,7 @@ const RaceSelector = () => {
 
   const handleRaceChange = (e) => {
     const selectedRound = e.target.value;
-    
+    actions.setSelectedRound(selectedRound); // Call setSelectedRound to update selectedRound
     actions.fetchRaceResults(2024, selectedRound);
   };
 

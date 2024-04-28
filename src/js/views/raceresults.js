@@ -1,11 +1,7 @@
-// raceresults.js
 import React, { useEffect, useContext } from "react";
 import "../../styles/raceresults.css";
 import { Context } from "../store/appContext";
 import RaceResults from "/src/js/component/raceresults.js";
-// import RaceResults from "/src/js/component/RaceResults.js";
-// import Banner from "../component/banner";
-// import Body from "/src/js/component/body.js";
 import RaceSelector from "/src/js/component/raceselector.js";
 
 export const RaceRes = () => {
@@ -13,13 +9,19 @@ export const RaceRes = () => {
 
   useEffect(() => {
     actions.fetchDrivers(2024);
-    actions.fetchCircuits(2024); 
-  }, []);
+    actions.fetchCircuits(2024);
+    if (store.selectedRound) {
+      actions.fetchRaceResults(2024, store.selectedRound);
+    }
+  }, [store.selectedRound]);
 
   // Check if circuitsByRound is defined
   if (!store.circuitsByRound) {
     return <div>Loading...</div>; // or return null if you want to render nothing until data is loaded
   }
+
+  const selectedCircuit = store.circuitsByRound.find(round => round.round === store.selectedRound);
+  const circuitName = selectedCircuit ? selectedCircuit.circuits[0].circuitName : "";
 
   return (
     <div className="text-center home-container">

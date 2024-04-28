@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 
 const RaceResults = ({ raceResults }) => {
+  const { store } = useContext(Context);
+
+  const selectedRound = store.selectedRound;
+  const selectedCircuit = store.circuitsByRound.find(round => round.round === selectedRound);
+  const circuitName = selectedCircuit ? selectedCircuit.circuits[0].circuitName : "";
+  
   return (
     <div>
+      <h2>{circuitName}</h2> {/* Display circuit name above the table */}
       <table>
         <thead>
           <tr>
