@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 
 const QualiResults = ({ results }) => {
+  const { store } = useContext(Context);
+
+  // Find the selected circuit's name based on the selectedRound
+  const selectedRound = store.selectedRound;
+  const selectedCircuit = store.circuitsByRound.find(round => round.round === selectedRound);
+  const circuitName = selectedCircuit ? selectedCircuit.circuits[0].circuitName : "";
+
   return (
     <div>
+      <h2>{circuitName}</h2> {/* Display circuit name above the table */}
       <table>
         <thead>
           <tr>
@@ -32,3 +41,6 @@ const QualiResults = ({ results }) => {
 };
 
 export default QualiResults;
+
+
+
