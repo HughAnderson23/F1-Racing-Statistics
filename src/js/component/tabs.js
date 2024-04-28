@@ -10,6 +10,9 @@ export const Tabviews = () => {
         <Link to = "/qualies">     
             <button id="qualifier-results-btn">Qualifier Results</button>
         </Link> 
+        <Link to = "/raceresults">  
+          <button id="race-results-btn">Race Results</button>
+        </Link>
       </div>
     );
   };

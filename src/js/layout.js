@@ -11,8 +11,8 @@ import { Navbar } from "./component/navbar";
 import Banner from "./component/banner";
 import { Footer } from "./component/footer";
 import Tabviews from "./component/tabs";
-// import Body from "/src/js/component/body.js";
 import Qualies from "./views/qualies";
+import RaceRes from "./views/raceresults";
 
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -30,6 +30,7 @@ const Layout = () => {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/qualies" element={<Qualies />} />
+						<Route path="/raceresults" element={<RaceRes />} />
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
