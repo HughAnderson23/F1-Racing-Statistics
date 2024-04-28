@@ -13,7 +13,6 @@ const RaceSelector = () => {
 
   return (
     <div className="race-selector">
-      <h2>Driver Performance Comparison</h2>
       <select value={store.selectedRound} onChange={handleRaceChange}>
         <option value="">Select a race</option>
         {store.circuitsByRound.map((round, roundIndex) => (

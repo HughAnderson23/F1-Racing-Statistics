@@ -1,11 +1,11 @@
-// Home.js
+// qualies.js
 import React, { useEffect, useContext } from "react";
-import "../../styles/home.css";
+import "../../styles/qualies.css";
 import { Context } from "../store/appContext";
-// import QualiResults from "/src/js/component/QualiResults.js";
+import QualiResults from "/src/js/component/qualiresults.js";
 // import RaceResults from "/src/js/component/RaceResults.js";
 // import Banner from "../component/banner";
-
+// import Body from "/src/js/component/body.js";
 import RaceSelector from "/src/js/component/raceselector.js";
 
 export const Qualies = () => {
@@ -23,13 +23,15 @@ export const Qualies = () => {
 
   return (
     <div className="text-center home-container">
-      <RaceSelector />
-      {/* <Banner /> */}
-      
-      {/* Qualifier results component*/}
-      {/* <QualiResults results={store.qualifyingResults} /> */}
-      {/* Race results component */}
-      {/* <RaceResults raceResults={store.raceResults} /> */}
+      <div className = "body">
+            <div className = "body-inner">
+              <h1>Qualifying Results</h1>
+              <RaceSelector /> 
+              <div className="center-content">
+                <QualiResults results={store.qualifyingResults} />
+              </div>
+            </div>
+        </div>
     </div>
   );
 };

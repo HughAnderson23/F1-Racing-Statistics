@@ -1,0 +1,20 @@
+.body {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+.body-inner {
+    background-color: #ffffff;
+    max-width: 800px;
+    width: 100%; 
+    margin: -140px 0 0; 
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }

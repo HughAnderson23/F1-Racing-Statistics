@@ -3,7 +3,7 @@ import React from "react";
 const QualiResults = ({ results }) => {
   return (
     <div>
-      <h3>Qualifying Results</h3>
+      
       <table>
         <thead>
           <tr>

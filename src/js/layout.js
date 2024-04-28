@@ -11,7 +11,7 @@ import { Navbar } from "./component/navbar";
 import Banner from "./component/banner";
 import { Footer } from "./component/footer";
 import Tabviews from "./component/tabs";
-import Body from "/src/js/component/body.js";
+// import Body from "/src/js/component/body.js";
 import Qualies from "./views/qualies";
 
 const Layout = () => {
@@ -26,7 +26,7 @@ const Layout = () => {
 					<Navbar />
 					<Tabviews />
 					<Banner />
-					<Body />
+					
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/qualies" element={<Qualies />} />
