@@ -1,7 +1,36 @@
+.navbar {
+    justify-content: left;
+}
 .bg-custom {
-    background-color: #2f385c !important; /* Set the background color to #0d0d1a */
+    background-color: #2f385c !important; /* Set the background color */
 }
 
 .navbar-brand {
-    margin-left: 20px; /* Adjust the margin-left to create space between the home button and the left side of the browser */ 
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Adjust the margin-left */
 }
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Adjust the margin-left */
+}
+
+.separator {
+    color: white;
+    margin: 0 10px; /* Adjust spacing */
+}
+
+.f1-button {
+    color: white; /* White text */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
