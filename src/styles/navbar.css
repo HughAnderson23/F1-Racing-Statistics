@@ -1,0 +1,7 @@
+.bg-custom {
+    background-color: #2f385c !important; /* Set the background color to #0d0d1a */
+}
+
+.navbar-brand {
+    margin-left: 20px; /* Adjust the margin-left to create space between the home button and the left side of the browser */ 
+}

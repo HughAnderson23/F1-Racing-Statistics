@@ -1,0 +1,36 @@
+.tab-container {
+    display: flex;
+    justify-content: center;
+    height: 60px; /* Increase the height of the container */
+}
+
+.tab-container > * {
+    margin: 0 5px; /* Adjust the spacing between buttons if needed */
+}
+
+.tab-container > *::after {
+    content: "|"; /* Add vertical bar after each button */
+    margin-left: 5px; /* Adjust the spacing between vertical bar and button */
+    color: black; /* Set the color of the vertical bar to black */
+}
+
+.tab-container > *:last-child::after {
+    content: none; /* Remove vertical bar after the last button */
+}
+
+button {
+    border: none; /* Remove button border */
+    background: none; /* Remove button background */
+    cursor: pointer; /* Show pointer cursor on hover */
+    font-size: inherit; /* Inherit font size from parent */
+    height: 100%; /* Set button height to 100% of container height */
+}
+
+button:hover {
+    text-decoration: underline; /* Underline button text on hover */
+}
+
+button:focus {
+    outline: none; /* Remove button focus outline */
+}
+
