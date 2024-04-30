@@ -13,6 +13,8 @@ import { Footer } from "./component/footer";
 import Tabviews from "./component/tabs";
 import Qualies from "./views/qualies";
 import RaceRes from "./views/raceresults";
+import SidebarSchedule from "./component/sidebarschedule.js";
+import "./../styles/layout.css";
 
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -20,26 +22,35 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div>
-			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Tabviews />
-					<Banner />
-					
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/qualies" element={<Qualies />} />
-						<Route path="/raceresults" element={<RaceRes />} />
-						<Route path="/demo" element={<Demo />} />
-						<Route path="/single/:theid" element={<Single />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
-					</Routes>
-					<Footer />
-				</ScrollToTop>
-			</BrowserRouter>
-		</div>
-	);
+        <div>
+            <BrowserRouter basename={basename}>
+                <ScrollToTop>
+                    <Navbar />
+                    <Tabviews />
+                    <Banner />
+                    <div className="content-container">
+						<div className="sidebar">
+                            <SidebarSchedule />
+                        </div>
+						<div className="main-content">
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/qualies" element={<Qualies />} />
+                                <Route path="/raceresults" element={<RaceRes />} />
+                                <Route path="/demo" element={<Demo />} />
+                                <Route path="/single/:theid" element={<Single />} />
+                                <Route path="*" element={<h1>Not found!</h1>} />
+                            </Routes>
+                        </div>
+                        <div className="sidebar">
+                            <SidebarSchedule />
+                        </div>
+                    </div>
+                    <Footer />
+                </ScrollToTop>
+            </BrowserRouter>
+        </div>
+    );
 };
 
 export default injectContext(Layout);

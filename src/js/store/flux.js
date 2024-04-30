@@ -4,8 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
             drivers: [],
             circuits: [],
             qualifyingResults: [],
-            raceResults: [], // Add raceResults array to store race results
-            
+            raceResults: [],
+            raceSchedule: [] // Add raceSchedule array to store race schedule
         },
         actions: {
             fetchDrivers: async (year) => {
@@ -85,6 +85,25 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
             },
 
+            fetchRaceSchedule: async () => {
+                try {
+                    const resp = await fetch('https://ergast.com/api/f1/current.json');
+                    if (!resp.ok) {
+                        throw new Error('Failed to fetch race schedule data for the current season');
+                    }
+                    const data = await resp.json();
+                    const races = data.MRData.RaceTable.Races;
+                    setStore({ raceSchedule: races });
+                } catch (error) {
+                    console.error('Error fetching race schedule:', error);
+                }
+            },
+            
+            
+            
+            
+            
+
             // Inside the actions object
             setSelectedRound: (round) => {
                 setStore({ selectedRound: round });
@@ -95,3 +114,5 @@ const getState = ({ getStore, getActions, setStore }) => {
 };
 
 export default getState;
+
+
