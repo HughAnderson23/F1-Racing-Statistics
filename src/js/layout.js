@@ -14,6 +14,7 @@ import Tabviews from "./component/tabs";
 import Qualies from "./views/qualies";
 import RaceRes from "./views/raceresults";
 import SidebarSchedule from "./component/sidebarschedule.js";
+import NewsSidebar from "./component/newssidebar.js";
 import "./../styles/layout.css";
 
 const Layout = () => {
@@ -30,7 +31,7 @@ const Layout = () => {
                     <Banner />
                     <div className="content-container">
 						<div className="sidebar">
-                            <SidebarSchedule />
+                            <NewsSidebar />
                         </div>
 						<div className="main-content">
                             <Routes>
