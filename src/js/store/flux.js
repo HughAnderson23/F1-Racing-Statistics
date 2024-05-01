@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             qualifyingResults: [],
             raceResults: [],
             raceSchedule: [], // Add raceSchedule array to store race schedule
-            topF1News: [] // Add topF1News array to store top Formula 1 news articles
+            topF1News: []
         },
         actions: {
             fetchDrivers: async (year) => {
@@ -105,22 +105,24 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
 
             // Add a new action function to fetch the top Formula 1 news articles
-            fetchTopF1News: async () => {
+            fetchF1News: async () => {
                 try {
-                    const response = await fetch(`https://newsapi.org/v2/top-headlines?q=Formula%201&language=en&sortBy=popularity&apiKey=463ed0543a65400eaa4c7c1405c1357a`);
-
+                    const url = `https://newsdata.io/api/1/news?apikey=pub_4326069bea708ac9b47b9f8d9f52964a31cc1&q=F1%20Racing&language=en`;
+                    const response = await fetch(url);
                     const data = await response.json();
-
-                    if (response.ok && data.articles) {
-                        const topArticles = data.articles.slice(0, 6);
+            
+                    if (response.ok && data.results) { // Accessing data.results instead of data.articles
+                        const topArticles = data.results.slice(0, 6);
                         setStore({ topF1News: topArticles });
                     } else {
-                        throw new Error('Failed to fetch top Formula 1 news articles');
+                        throw new Error('Failed to fetch top F1 news articles');
                     }
                 } catch (error) {
-                    console.error('Error fetching top Formula 1 news articles:', error);
+                    console.error('Error fetching top F1 news articles:', error);
                 }
             }
+            
+            
 
         }
     };
