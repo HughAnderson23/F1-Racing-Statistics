@@ -1,0 +1,30 @@
+.news-sidebar {
+    text-align: center; /* Center all content */
+    margin-right: 20px; /* Add margin to push content to the right */
+}
+
+.article-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.article-link {
+    display: inline-block; /* Make the link act like a block element */
+    margin-bottom: 20px; /* Add margin between articles */
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Change link color */
+}
+
+.article-link:hover {
+    color: #000; /* Change link color on hover */
+}
+
+h5 {
+    margin-bottom: 10px; /* Add margin below article title */
+}
+
+img {
+    display: block; /* Make the image a block element */
+    margin: 0 auto 10px; /* Center the image and add margin below */
+}
+
